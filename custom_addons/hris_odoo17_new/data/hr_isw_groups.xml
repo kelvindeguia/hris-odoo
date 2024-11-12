@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_hr_isw_accounts">
+            <field name="name">Human Resources</field>
+            <field name="description">Groups for HRIS</field>
+            <field name="sequence">-10</field>
+        </record>
+    </data>
+</odoo>

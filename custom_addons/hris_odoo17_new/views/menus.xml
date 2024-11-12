@@ -1,0 +1,305 @@
+<odoo>
+    <menuitem
+        id='root_menu_hr_isws'
+        name='HRIS'
+        sequence='2'
+        groups='group_hr_isw_user'
+    />
+
+    <!-- Tags Tracker -->
+    <menuitem
+        parent='root_menu_hr_isws'
+        id='menu_tags'
+        name='Tags Trackers'
+        sequence='101'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_it_department_user,group_it_department_manager,group_gloc_department_user,group_gloc_department_manager,group_recruitment_department_user,group_recruitment_department_manager,group_facilities_department_user,group_facilities_department_manager,group_cs_department_user,group_cs_department_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_tags'
+    />
+       
+    <!-- New Hire Tracker - Parent -->
+    <menuitem
+        parent='root_menu_hr_isws'
+        id='menu_hr_new_hire_tracker_parent'
+        name='New Hire Tracker'
+        sequence='1'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_it_department_user,group_it_department_manager,group_finance_department_user,group_finance_department_manager'
+    />
+    
+    <!-- New Hire Tracker - Year Separator -->
+    <menuitem
+        parent='menu_hr_new_hire_tracker_parent'
+        id='menu_hr_new_hire_tracker_year_separator'
+        name='Year'
+        sequence='1'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_it_department_user,group_it_department_manager,group_finance_department_user,group_finance_department_manager'
+    />
+
+    <menuitem
+        parent='menu_hr_new_hire_tracker_year_separator'
+        id='menu_hr_new_hire_tracker'
+        name='2024'
+        sequence='1'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_it_department_user,group_it_department_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_new_hire_tracker'
+    />
+
+    <!-- New Hire Tracker - Others Separator -->
+    <menuitem
+        parent='menu_hr_new_hire_tracker_parent'
+        id='menu_hr_new_hire_tracker_others_separator'
+        name='Others'
+        sequence='2'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_it_department_user,group_it_department_manager,group_finance_department_user,group_finance_department_manager'
+    />
+
+    <!-- Accounts Tracker -->
+    <menuitem
+        parent='menu_hr_new_hire_tracker_others_separator'
+        id='menu_accounts'
+        name='Company'
+        sequence='100'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_it_department_user,group_it_department_manager,group_gloc_department_user,group_gloc_department_manager,group_recruitment_department_user,group_recruitment_department_manager,group_facilities_department_user,group_facilities_department_manager,group_cs_department_user,group_cs_department_manager,group_finance_department_user,group_finance_department_manager'       
+        action='action_accounts'
+    />
+
+    <!-- HR ER Tracker - Parent -->
+    <menuitem
+        parent='root_menu_hr_isws'
+        id='menu_hr_er_tracker_parent'
+        name='ER Trackers'
+        sequence='5'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_finance_department_user,group_finance_department_manager'
+    />
+
+    <!-- HR ER Tracker - PMF -->
+    <menuitem
+        parent='menu_hr_er_tracker_parent'
+        id='menu_hr_er_tracker_pmf'
+        name='PMF'
+        sequence='1'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_er_tracker_pmf'
+    />
+
+    <!-- HR ER Tracker - DA -->
+    <menuitem
+        parent='menu_hr_er_tracker_parent'
+        id='menu_hr_er_tracker_da'
+        name='DA'
+        sequence='2'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_er_tracker_da'
+    />
+
+    <!-- HR ER Tracker - RTWO -->
+    <menuitem
+        parent='menu_hr_er_tracker_parent'
+        id='menu_hr_rtwo_tracker'
+        name='RTWO'
+        sequence='3'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_rtwo_tracker'
+    />
+
+    <!-- HR ER Tracker - Probationary Extension Tracker -->
+    <menuitem
+        parent='menu_hr_er_tracker_parent'
+        id='menu_hr_probitionary_extension_tracker'
+        name='Probationary Extension'
+        sequence='4'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_probitionary_extension_tracker'
+    />
+
+    <!-- HR ER Tracker - PPPA Tracker -->
+    <menuitem
+        parent='menu_hr_er_tracker_parent'
+        id='menu_hr_pppa_tracker'
+        name='PPPA'
+        sequence='5'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_pppa_tracker'
+    />
+
+    <!-- HR ER Tracker - Project Based Extension -->
+    <menuitem
+        parent='menu_hr_er_tracker_parent'
+        id='menu_hr_project_based_extension'
+        name='Project Based Extension'
+        sequence='6'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_project_based_extension'
+    />
+
+    <!-- HR ER Tracker - PIP Tracker -->
+    <menuitem
+        parent='menu_hr_er_tracker_parent'
+        id='menu_hr_pip_tracker'
+        name='PIP'
+        sequence='7'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_pip_tracker'
+    />
+
+    <!-- HR Performance Review Tracker - Parent / Children -->
+    <menuitem
+        parent='menu_hr_er_tracker_parent'
+        id='menu_hr_performance_review_tracker_parent'
+        name='Performance Review'
+        sequence='8'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_performance_review_tracker'
+    />
+
+
+    <!-- ER Tracker - Others Separator -->
+    <menuitem
+        parent='menu_hr_er_tracker_parent'
+        id='menu_hr_er_tracker_others_separator'
+        name='Others'
+        sequence='9'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_finance_department_user,group_finance_department_manager'
+    />
+
+    <!-- HR ER Tracker - PMF Type of Movement -->
+    <menuitem
+        parent='menu_hr_er_tracker_others_separator'
+        id='menu_hr_er_tracker_pmf_type_of_movement'
+        name='Type of Movement Tracker(PMF)'
+        sequence='1'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_er_tracker_pmf_type_of_movement'
+    />
+
+
+    <!-- HR iSWerk Transition List - Parent / Children -->
+    <menuitem
+        parent='root_menu_hr_isws'
+        id='menu_hr_iswerk_transition_list_parent'
+        name='iSWerk Transition List'
+        sequence='7'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_iswerk_transition_list'
+    />
+
+    <!-- HR Resignation Tracker - Parent / Children -->
+    <menuitem
+        parent='root_menu_hr_isws'
+        id='menu_hr_resignation_tracker_parent'
+        name='Resignation Tracker'
+        sequence='11'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_finance_department_user,group_finance_department_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_resignation_tracker'
+    />
+</odoo>
+
+<!-- Removed Menus -->
+
+<!-- Employee Onboarding Tracker -->
+    <!-- <menuitem
+        parent='root_menu_hr_isws'
+        id='menu_hr_onboarding_trackersss'
+        name='Employee Onboarding Trackers'
+        sequence='1'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_it_department_user,group_it_department_manager,group_gloc_department_user,group_gloc_department_manager,group_recruitment_department_user,group_recruitment_department_manager,group_facilities_department_user,group_facilities_department_manager,group_cs_department_user,group_cs_department_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_employee_onboarding_trackersss'
+    />         -->
+
+
+    <!-- <menuitem
+        parent='root_menu_hr_isws'
+        id='menu_hr_eid_tracker'
+        name='EID Tracker'
+        sequence='3'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_eid_tracker'
+    /> -->
+
+    <!-- HR Employee Credentials Validation - Parent -->
+    <!-- <menuitem
+        parent='root_menu_hr_isws'
+        id='menu_hr_employee_credentials_validation_parent'
+        name='Employee Credentials Validation'
+        groups='group_hr_isw_user'
+        sequence='4'
+    /> -->
+
+
+    <!-- HR Employee Credentials Validation - New Hires -->
+    <!-- <menuitem
+        parent='menu_hr_employee_credentials_validation_parent'
+        id='menu_hr_employee_credentials_validation_newhires'
+        name='New Hires'
+        sequence='-1'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_it_department_user,group_it_department_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_employee_credentials_validation_newhires'
+    />     -->
+
+    <!-- HR Employee Credentials Validation - Government Numbers -->
+    <!-- <menuitem
+        parent='menu_hr_employee_credentials_validation_parent'
+        id='menu_hr_employee_credentials_validation_govnumbers'
+        name='Government Numbers'
+        sequence='2'
+        groups='group_hr_isw_user'
+        action='action_hr_employee_credentials_validation_govnumbers'
+    /> -->
+
+    <!-- HR Employee Credentials Validation - To iSWerk -->
+    <!-- <menuitem
+        parent='menu_hr_employee_credentials_validation_parent'
+        id='menu_hr_employee_credentials_validation_toiswerk'
+        name='Transition to iSWerk'
+        sequence='3'
+        groups='group_hr_isw_user'
+        action='action_hr_employee_credentials_validation_toiswerk'
+    /> -->
+
+    <!-- Main Menu: Employee Masterlist -->
+    <!-- <menuitem
+        id='main_menu_employee_masterlist'
+        name='Employee Masterlist'
+        parent='root_menu_hr_isws'
+        sequence='9'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_it_department_user,group_it_department_manager,group_gloc_department_user,group_gloc_department_manager,group_recruitment_department_user,group_recruitment_department_manager,group_facilities_department_user,group_facilities_department_manager,group_cs_department_user,group_cs_department_manager,group_finance_department_user,group_finance_department_manager'
+    /> -->
+
+    <!-- Sub menu: HR Employee Masterlist Active -->
+    <!-- <menuitem
+        id='menu_hr_employee_masterlist_active'
+        parent='main_menu_employee_masterlist'
+        name='Active'
+        sequence='1'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_it_department_user,group_it_department_manager,group_gloc_department_user,group_gloc_department_manager,group_recruitment_department_user,group_recruitment_department_manager,group_facilities_department_user,group_facilities_department_manager,group_cs_department_user,group_cs_department_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_employee_masterlist_active'
+    /> -->
+
+    <!-- Sub menu: HR Employee Masterlist Inctive -->
+    <!-- <menuitem
+        id='menu_hr_employee_masterlist_inactive'
+        parent='main_menu_employee_masterlist'
+        name='Inactive'
+        sequence='2'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_it_department_user,group_it_department_manager,group_gloc_department_user,group_gloc_department_manager,group_recruitment_department_user,group_recruitment_department_manager,group_facilities_department_user,group_facilities_department_manager,group_cs_department_user,group_cs_department_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_employee_masterlist_inactive'
+    /> -->
+
+    <!-- Sub menu: HR Employee Masterlist Resignation Tracker -->
+    <!-- <menuitem
+        id='menu_hr_employee_masterlist_resignation_tracker'
+        parent='main_menu_employee_masterlist'
+        name='Resignation Tracker'
+        sequence='3'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_it_department_user,group_it_department_manager,group_gloc_department_user,group_gloc_department_manager,group_recruitment_department_user,group_recruitment_department_manager,group_facilities_department_user,group_facilities_department_manager,group_cs_department_user,group_cs_department_manager,group_finance_department_user,group_finance_department_manager'
+        action='action_hr_employee_masterlist_resignation_tracker'
+    /> -->
+
+    <!-- HR Offboarding Tracker - Parent / Children -->
+    <!-- <menuitem
+        parent='root_menu_hr_isws'
+        id='menu_hr_offboarding_tracker_parent'
+        name='Offboarding Tracker'
+        sequence='10'
+        groups='group_hr_isw_user,group_hr_isw_manager,group_it_department_user,group_it_department_manager,group_finance_department_user,group_finance_department_manager,group_facilities_department_user,group_facilities_department_manager'
+        action='action_hr_offboarding_tracker'
+    /> -->

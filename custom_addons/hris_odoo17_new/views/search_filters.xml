@@ -1,0 +1,399 @@
+<odoo>
+    <!-- HR New Hire Tracker Overall: Search Filter -->
+    <record id='hr_new_hire_trackers_search' model='ir.ui.view'>
+        <field name='name'>hr.new.hire.trackers.search</field>
+        <field name='model'>hr.new.hire.trackers</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_id' string='Employee'
+                    filter_domain="['|','|','|', ('employee_id', 'ilike', self), ('first_name', 'ilike', self), ('last_name', 'ilike', self), ('complete_name', 'ilike', self)]" />
+                <separator />
+                <filter string='Probationary' name='probationary_3rd'
+                    domain="[('c_employment_status', '=', 'Probationary')]" />
+                <filter string='Project-Based' name='project_based'
+                    domain="[('c_employment_status', '=', 'Project-Based')]" />
+                <filter string='Regular' name='regular'
+                    domain="[('c_employment_status', '=', 'Regular')]" />
+                <separator />
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+                <filter string='Fall Out' name='tags' domain="[('tags', '=', 'Fallout')]" />
+                <filter string='TBD' name='tags' domain="[('tags', '=', 'TBD')]" />
+                <filter string='Inactive' name='tags' domain="[('tags', '=', 'Inactive')]" />
+
+                <group expand="0" string="Group By: ">
+                    <filter string="Account" name="account" context="{'group_by':'account'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- HR ER Tracker: PMF Tracker: Search Filter -->
+    <record id='hr_er_tracker_pmf_search' model='ir.ui.view'>
+        <field name='name'>hr.er.tracker.pmf.search</field>
+        <field name='model'>hr.er.tracker.pmf</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_name' string='Employee'
+                    filter_domain="['|', ('employee_id', 'ilike', self), ('employee_name', 'ilike', self)]" />
+                <separator />
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+                <group expand="0" string="Group By: ">
+                    <filter string="Account" name="account" context="{'group_by':'account'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- HR ER Tracker: DA Tracker: Search View -->
+    <record id='hr_er_tracker_da_search' model='ir.ui.view'>
+        <field name='name'>hr.er.tracker.da.search</field>
+        <field name='model'>hr.er.tracker.da</field>
+        <field name='arch' type='xml'>
+            <search string='Search ER Tracker DA'>
+                <field name='employee_number' string='Employee'
+                    filter_domain="['|', ('employee_number', 'ilike', self), ('complete_name', 'ilike', self)]" />
+                <separator />
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+                <group expand="0" string="Group By: ">
+                    <filter string="Account" name="account" context="{'group_by':'account'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- HR Er Tracker - RTWO Tracker: Search Filter -->
+    <record id='hr_rtwo_tracker_search' model='ir.ui.view'>
+        <field name='name'>hr.rtwo.tracker.search</field>
+        <field name='model'>hr.rtwo.tracker</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_id' string='Employee'
+                    filter_domain="['|','|','|', ('employee_id', 'ilike', self), ('first_name', 'ilike', self), ('last_name', 'ilike', self), ('complete_name', 'ilike', self)]" />
+                <separator />
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+            </search>
+        </field>
+    </record>
+
+    <!-- HR Er Tracker - Probitionary Extension Tracker: Search Filter -->
+    <record id='hr_probitionary_extension_tracker_search' model='ir.ui.view'>
+        <field name='name'>hr.probitionary.extension.tracker.search</field>
+        <field name='model'>hr.probitionary.extension.tracker</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_id' string='Employee'
+                    filter_domain="['|', ('employee_id', 'ilike', self), ('complete_name', 'ilike', self)]" />
+                <separator />
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+                <group expand="0" string="Group By: ">
+                    <filter string="Account" name="account" context="{'group_by':'account'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- HR Er Tracker - PPPA Tracker: Search Filter -->
+    <record id='hr_pppa_tracker_search' model='ir.ui.view'>
+        <field name='name'>hr.pppa.tracker.search</field>
+        <field name='model'>hr.pppa.tracker</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_id' string='Employee'
+                    filter_domain="['|', ('employee_id', 'ilike', self), ('complete_name', 'ilike', self)]" />
+                <separator />
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+                <group expand="0" string="Group By: ">
+                    <filter string="Account" name="account" context="{'group_by':'account'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- HR Er Tracker - Project Based Extension: Search Filter -->
+    <record id='hr_project_based_extension_search' model='ir.ui.view'>
+        <field name='name'>hr.project.based.extension.search</field>
+        <field name='model'>hr.project.based.extension</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_id' string='Employee'
+                    filter_domain="['|', ('employee_id', 'ilike', self), ('complete_name', 'ilike', self)]" />
+                <separator />
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+                <group expand="0" string="Group By: ">
+                    <filter string="Account" name="account" context="{'group_by':'account'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- HR Er Tracker - PIP Tracker: Search Filter -->
+    <record id='hr_pip_tracker_search' model='ir.ui.view'>
+        <field name='name'>hr.pip.tracker.search</field>
+        <field name='model'>hr.pip.tracker</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_number' string='Employee'
+                    filter_domain="['|','|','|', ('employee_number', 'ilike', self), ('first_name', 'ilike', self), ('last_name', 'ilike', self), ('complete_name', 'ilike', self)]" />
+                <separator />
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+                <group expand="0" string="Group By: ">
+                    <filter string="Account" name="account" context="{'group_by':'account'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- HR Iswerk Transition List: Search Filter -->
+    <record id='hr_iswerk_transition_list_search' model='ir.ui.view'>
+        <field name='name'>hr.iswerk.transition.list.search</field>
+        <field name='model'>hr.iswerk.transition.list</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_id' string='Employee'
+                    filter_domain="['|', ('employee_id', 'ilike', self), ('complete_name', 'ilike', self)]" />
+                <separator />
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+                <group expand="0" string="Group By: ">
+                    <filter string="Account" name="department_account"
+                        context="{'group_by':'department_account'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- HR Performance Review Tracker: Search Filter -->
+    <record id='hr_performance_review_tracker_search' model='ir.ui.view'>
+        <field name='name'>hr.performance.review.tracker.search</field>
+        <field name='model'>hr.performance.review.tracker</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_number' string='Employee'
+                    filter_domain="['|', ('employee_number', 'ilike', self), ('complete_name', 'ilike', self)]" />
+                <separator />
+                <filter string='Regular' name='regular'
+                    domain="[('c_employment_status', '=', 'REGULAR')]" />
+                <filter string='Probationary' name='probationary'
+                    domain="[('c_employment_status', '=', 'PROBATIONARY')]" />
+                <filter string='Project-Based' name='project-based'
+                    domain="[('c_employment_status', '=', 'Project-Based')]" />
+                <separator />
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+                <group expand="0" string="Group By: ">
+                    <filter string="Account" name="account"
+                        context="{'group_by':'account'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- HR ER Tracker: Resignation Tracker: Search View -->
+    <record id='hr_resignation_tracker_search' model='ir.ui.view'>
+        <field name='name'>hr.resignation.tracker.search</field>
+        <field name='model'>hr.resignation.tracker</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='eid' string='Employee'
+                    filter_domain="['|', ('eid', 'ilike', self), ('full_name', 'ilike', self)]" />
+                <separator />
+                <filter string='Voluntary' name='voluntary'
+                    domain="[('voluntary_involuntary', '=', 'VOLUNTARY')]" />
+                <filter string='Involuntary' name='involuntary'
+                    domain="[('voluntary_involuntary', '=', 'INVOLUNTARY')]" />
+                <separator />
+                <filter string='iSwerk' name='iswerk'
+                    domain="['|','|','|', ('entity', '=', 'ISW'), ('entity', '=', 'ISW / iSWerk'), ('entity', '=', 'iSWerk'), ('entity', '=', 'ISWerk')]" />
+                <filter string='iSupport Worldwide' name='isupport_worldwide'
+                    domain="[('entity', '=', 'iSupport Worldwide')]" />
+            </search>
+        </field>
+    </record>
+
+</odoo>
+
+<!-- HR Employee Onboarding Tracker: Search Filter -->
+    <!-- <record id='hr_employee_onboarding_trackersss_search' model='ir.ui.view'>
+        <field name='name'>hr.employee.onboarding.trackersss.search</field>
+        <field name='model'>hr.employee.onboarding.trackersss</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_id' string='Employee'
+                    filter_domain="['|','|','|', ('employee_id', 'ilike', self), ('first_name', 'ilike', self), ('last_name', 'ilike', self), ('complete_name', 'ilike', self)]" />
+                <separator/> -->
+                <!-- <filter string='Probationary' name='probationary'
+                    domain="[('employment_status', '=', 'probationary')]" />
+                <filter string='Project-Based' name='project_based'
+                    domain="[('employment_status', '=', 'project_based')]" />
+                <filter string='Regular' name='regular'
+                    domain="[('employment_status', '=', 'regular')]" />
+                <filter string='Currently Employed' name='curently_employed'
+                    domain="[('employment_status', '=', 'currently_employed')]" /> -->
+                <!-- <separator/>
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+                <separator/>
+                <filter string='Fall Out' name='tags' domain="['|','|','|',('tags', '=', 'Fallout'), ('tags', '=', 'Fall Out'), ('tags', '=', 'Fall out'), ('tags', '=', 'FALLOUT')]" />
+                <filter string='TBD' name='tags' domain="[('tags', '=', 'TBD')]" />
+                <filter string='Inactive' name='tags' domain="[('tags', '=', 'Inactive')]" />
+                <filter string='Active' name='tags' domain="[('tags', '=', 'Active')]" />
+
+                <group expand="0" string="Group By: ">
+                    <filter string="Account" name="account" context="{'group_by':'account'}" />
+                    <filter string="Orientation Date" name="orientation_date"
+                        context="{'group_by':'orientation_date'}" />
+                </group>
+            </search>
+        </field>
+    </record> -->
+
+    <!-- HR EID Tracker: Search Filter -->
+    <!-- <record id='hr_eid_tracker_search' model='ir.ui.view'>
+        <field name='name'>hr.eid.tracker.search</field>
+        <field name='model'>hr.eid.tracker</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_id' string='Employee'
+                    filter_domain="['|','|','|', ('employee_id', 'ilike', self), ('first_name', 'ilike', self), ('last_name', 'ilike', self), ('complete_name', 'ilike', self)]" />
+                <separator />
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+                <group expand="0" string="Group By: ">
+                    <filter string="Account" name="account" context="{'group_by':'account'}" />
+                </group>
+            </search>
+        </field>
+    </record> -->
+
+    <!-- HR Employee Credentials Validation - New Hires: Search Filter -->
+    <!-- <record id='hr_employee_credentials_validation_newhires_search' model='ir.ui.view'>
+        <field name='name'>hr.employee.credentials.validation.newhires.search</field>
+        <field name='model'>hr.employee.credentials.validation.newhires</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_id' string='Employee'
+                    filter_domain="['|','|','|', ('employee_id', 'ilike', self), ('first_name', 'ilike', self), ('last_name', 'ilike', self), ('complete_name', 'ilike', self)]" />
+                <separator />
+                <filter string='iSwerk' name='iswerk'
+                    domain="['|','|','|', ('c_entity', '=', 'ISW'), ('c_entity', '=', 'ISW / iSWerk'), ('c_entity', '=', 'iSWerk'), ('c_entity', '=', 'ISWerk')]" />
+                <filter string='iSupport Worldwide' name='isupport_worldwide'
+                    domain="[('c_entity', '=', 'iSupport Worldwide')]" />
+                <separator />
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+                <group expand="0" string="Group By: ">
+                    <filter string="Account" name="account_department"
+                        context="{'group_by':'account_department'}" />
+                </group>
+            </search>
+        </field>
+    </record> -->
+
+    <!-- HR Employee Credentials Validation - Government Numbers: Search Filter -->
+    <!-- <record id='hr_employee_credentials_validation_govnumbers_search' model='ir.ui.view'>
+        <field name='name'>hr.employee.credentials.validation.govnumbers.search</field>
+        <field name='model'>hr.employee.credentials.validation.govnumbers</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_id' string='Employee'
+                    filter_domain="['|','|','|', ('employee_id', 'ilike', self), ('first_name', 'ilike', self), ('last_name', 'ilike', self), ('complete_name', 'ilike', self)]" />
+                <separator />
+                <filter string='iSwerk' name='iswerk'
+                    domain="['|','|','|', ('c_entity', '=', 'ISW'), ('c_entity', '=', 'ISW / iSWerk'), ('c_entity', '=', 'iSWerk'), ('c_entity', '=', 'ISWerk')]" />
+                <filter string='iSupport Worldwide' name='isupport_worldwide'
+                    domain="[('c_entity', '=', 'iSupport Worldwide')]" />
+                <separator />
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+            </search>
+        </field>
+    </record> -->
+
+    <!-- HR Employee Credentials Validation - To iSWerk: Search Filter -->
+    <!-- <record id='hr_employee_credentials_validation_toiswerk_search' model='ir.ui.view'>
+        <field name='name'>hr.employee.credentials.validation.toiswerk.search</field>
+        <field name='model'>hr.employee.credentials.validation.toiswerk</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_id' string='Employee'
+                    filter_domain="['|','|','|', ('employee_id', 'ilike', self), ('first_name', 'ilike', self), ('last_name', 'ilike', self), ('complete_name', 'ilike', self)]" /> -->
+                <!-- <separator/>
+                <filter string='iSwerk' name='iswerk' domain="['|','|','|', ('entity', '=', 'ISW'), ('entity', '=',
+                'ISW / iSWerk'), ('entity', '=', 'iSWerk'), ('entity', '=', 'ISWerk')]"/>
+                <filter string='iSupport Worldwide' name='isupport_worldwide' domain="[('entity', '=', 'iSupport
+                Worldwide')]"/> -->
+                <!-- <separator />
+                <filter string='Archived' name='archive' domain="[('active', '=', False)]" />
+                <group expand="0" string="Group By: ">
+                    <filter string="Account" name="account_department"
+                        context="{'group_by':'account_department'}" />
+                </group>
+            </search>
+        </field>
+    </record> -->
+    
+    <!-- HR Employee Masterlist - Active: Search View -->
+    <!-- <record id='hr_employee_masterlist_active_search' model='ir.ui.view'>
+        <field name='name'>hr.employee.masterlist.active.search</field>
+        <field name='model'>hr.employee.masterlist.active</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_id' string='Employee'
+                    filter_domain="['|', '|', '|', ('employee_id', 'ilike', self), ('complete_name', 'ilike', self), ('first_name', 'ilike', self), ('last_name', 'ilike', self)]" />
+                <separator />
+                <filter string='ISWerk' name='iswerk'
+                    domain="[('company', '=', 'ISWerk')]" />
+                <filter string='iSupport Worldwide' name='isupport_worldwide'
+                    domain="[('company', '=', 'iSupport Worldwide')]" />
+                <separator />
+            </search>
+        </field>
+    </record> -->
+
+    <!-- HR Employee Masterlist - Inactive: Search View -->
+    <!-- <record id='hr_employee_masterlist_inactive_search' model='ir.ui.view'>
+        <field name='name'>hr.employee.masterlist.inactive.search</field>
+        <field name='model'>hr.employee.masterlist.inactive</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='eid' string='Employee'
+                    filter_domain="['|', '|', '|', ('eid', 'ilike', self), ('complete_name', 'ilike', self), ('first_name', 'ilike', self), ('last_name', 'ilike', self)]" />
+                <separator />
+                <filter string='iSwerk' name='iswerk'
+                    domain="['|','|','|', ('company', '=', 'ISW'), ('company', '=', 'ISW / iSWerk'), ('company', '=', 'iSWerk'), ('company', '=', 'ISWerk')]" />
+                <filter string='iSupport Worldwide' name='isupport_worldwide'
+                    domain="[('company', '=', 'iSupport Worldwide')]" />
+                <separator />
+            </search>
+        </field>
+    </record> -->
+
+    <!-- HR Employee Masterlist - Resignation Tracker: Search View -->
+    <!-- <record id='hr_employee_masterlist_inactive_search' model='ir.ui.view'>
+        <field name='name'>hr.employee.masterlist.resignation.tracker.search</field>
+        <field name='model'>hr.employee.masterlist.resignation.tracker</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='id_no' string='Employee'
+                    filter_domain="['|', ('id_no', 'ilike', self), ('fullname', 'ilike', self)]" />
+                <separator />
+                <filter string='Voluntary' name='voluntary'
+                    domain="[('voluntary_involuntary', '=', 'VOLUNTARY')]" />
+                <filter string='Involuntary' name='involuntary'
+                    domain="[('voluntary_involuntary', '=', 'INVOLUNTARY')]" />
+                <separator />
+            </search>
+        </field>
+    </record> -->
+
+    <!-- HR Offboarding Tracker: Search View -->
+    <!-- <record id='hr_employee_masterlist_inactive_search' model='ir.ui.view'>
+        <field name='name'>hr.offboarding.tracker.search</field>
+        <field name='model'>hr.offboarding.tracker</field>
+        <field name='arch' type='xml'>
+            <search string='Search Employees'>
+                <field name='employee_id' string='Employee'
+                    filter_domain="['|', ('employee_id', 'ilike', self), ('employee_name', 'ilike', self)]" />
+                <separator />
+                <filter string='ISWerk' name='iswerk'
+                    domain="['|','|','|', ('c_company', '=', 'ISW'), ('c_company', '=', 'ISW / iSWerk'), ('c_company', '=', 'iSWerk'), ('c_company', '=', 'ISWerk')]" />
+                <filter string='iSupport Worldwide' name='isupport_worldwide'
+                    domain="[('c_company', '=', 'iSupport Worldwide')]" />
+                <separator />
+            </search>
+        </field>
+    </record> -->

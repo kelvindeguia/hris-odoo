@@ -1,0 +1,525 @@
+<odoo>
+    <!-- HR New Hire Tracker: Tree View-->
+    <record id='hr_new_hire_trackers_tree' model='ir.ui.view'>
+        <field name='name'>hr.new.hire.trackers.tree</field>
+        <field name='model'>hr.new.hire.trackers</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='obt_number' optional="show" />
+                <field name='employee_id' optional="show" />
+                <field name="tags" widget="many2many_tags" options="{'color_field': 'color'}" optional="show"/>
+                <field name='account' optional="show" />
+                <field name='hiring_manager' optional="show" />
+                <field name='position' optional="show" />
+                <field name='c_classification_level' optional="show" />
+                <field name='first_name' optional="show" />
+                <field name='last_name' optional="show" />
+                <field name='c_employment_status' optional="show" />
+                <field name='operation_start_date' optional="show" />
+                <field name='neo_date' optional="show" />
+                <field name='official_start_date' optional="show" />
+                <field name='default_shift' optional="show" />
+                <field name='contact_details' optional="show" />
+                <field name='personal_email_address' optional="show" />
+                <field name='work_email_address' optional="show" />
+                <field name='working_onsite' optional="show" />
+                <field name='c_company' optional="show" />
+                <field name='neo_acknowledgement_checklist' optional="hide" />
+                <field name='handbook_acknowledgement' optional="hide" />
+                <!-- <field name='qs_tags' optional="hide" /> -->
+            </tree>
+        </field>
+    </record>
+
+    <record id='hr_er_tracker_pmf_tree' model='ir.ui.view'>
+        <field name='name'>hr.er.tracker.pmf.tree</field>
+        <field name='model'>hr.er.tracker.pmf</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+               <field name='employee_id' optional="show" />
+                <field name='employee_name' optional="show" />
+                <field name='hire_date' optional="show" />
+                <field name='account' optional="show" />
+                <field name='position' optional="show" />
+                <field name='new_position' optional="show" />
+                <field name='current_rate' optional="hide" />
+                <field name='new_rate' optional="show" />
+                <field name='effective_date' optional="show" />
+                <field name='email' optional="show" />
+                <field name='manager' optional="show" />
+                <!-- <field name='type_of_movement' optional="show" /> -->
+                <field name='c_type_of_movement' optional="show" />
+                <field name='pmf_sent_date' optional="show" />
+                <field name='remarks' optional="show" />
+                <field name='hr_representative' optional="show" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- <record id='hr_er_tracker_pmf_type_of_movement_tree' model='ir.ui.view'>
+        <field name='name'>hr.er.tracker.pmf.type.of.movement.tree</field>
+        <field name='model'>hr.er.tracker.pmf.type.of.movement</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='type_of_movement' optional="show" />
+            </tree>
+        </field>
+    </record> -->
+
+    <!-- HR ER Tracker: DA Tracker: Tree View -->
+    <record id='hr_er_tracker_da_tree' model='ir.ui.view'>
+        <field name='name'>hr.er.tracker.da.tree</field>
+        <field name='model'>hr.er.tracker.da</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='employee_number' optional="show" />
+                <field name='complete_name' optional="show" />
+                <field name='hire_date' optional="show" />
+                <field name='account' optional="show" />
+                <field name='main_infraction' optional="show" />
+                <field name='section' optional="show" />
+                <field name='level_of_sanction' optional="show" />
+                <field name='description' optional="show" />
+                <field name='ir_received_date' optional="show" />
+                <field name='hr_representative' optional="show" />
+                <field name='nte_serve_date' optional="show" />
+                <field name='ah_date' optional="show" />
+                <field name='ah_time' optional="show" />
+                <field name='c_decision' optional="show" />
+                <field name='nda_served_date' optional="show" />
+                <field name='termination_date' optional="show" />
+                <field name='remarks' optional="show" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Er Tracker - RTWO Tracker: Tree View-->
+    <record id='hr_rtwo_tracker_tree' model='ir.ui.view'>
+        <field name='name'>hr.rtwo.tracker.tree</field>
+        <field name='model'>hr.rtwo.tracker</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='employee_id' optional="show" />
+                <field name='last_name' optional="hide" />
+                <field name='first_name' optional="hide" />
+                <field name='middle_name' optional="hide" />
+                <field name='complete_name' optional="show" />
+                <field name='hire_date' optional="show" />
+                <field name='personal_email_address' optional="show" />
+                <field name='work_email_address' optional="show" />
+                <field name='requestor_name' optional="show" />
+                <field name='hr_representative' optional="hide" />
+                <field name='start_date_ncnc' optional="hide" />
+                <field name='rtwo_letter_sent' optional="hide" />
+                <field name='first_rtwo_hearing' optional="hide" />
+                <field name='first_rtwo_time' optional="hide" />
+                <field name='second_rtwo_hearing' optional="hide" />
+                <field name='second_rtwo_time' optional="hide" />
+                <field name='termination_date' optional="show" />
+                <field name='remarks' optional="show" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Er Tracker - Probitionary Extension Tracker: Tree View-->
+    <record id='hr_probitionary_extension_tracker_tree' model='ir.ui.view'>
+        <field name='name'>hr.probitionary.extension.tracker.tree</field>
+        <field name='model'>hr.probitionary.extension.tracker</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='employee_id' optional="show" />
+                <field name='complete_name' optional="show" />
+                <field name='hire_date' optional="show" />
+                <field name='account' optional="show" />
+                <field name='position' optional="show" />
+                <field name='fifth_month_review' optional="show" />
+                <field name='regularization_date' optional="show" />
+                <field name='extension_date' optional="show" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Er Tracker - PPPA Tracker: Tree View-->
+    <record id='hr_pppa_tracker_tree' model='ir.ui.view'>
+        <field name='name'>hr.pppa.tracker.tree</field>
+        <field name='model'>hr.pppa.tracker</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='employee_id' optional="show" />
+                <field name='complete_name' optional="show" />
+                <field name='hire_date' optional="show" />
+                <field name='account' optional="show" />
+                <field name='position' optional="show" />
+                <field name='temporary_position' optional="show" />
+                <field name='allowance' optional="hide" />
+                <field name='start_date' optional="show" />
+                <field name='end_date' optional="hide" />
+                <field name='remarks' optional="show" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Er Tracker - Project Based Extension: Tree View-->
+    <record id='hr_project_based_extension_tree' model='ir.ui.view'>
+        <field name='name'>hr.project.based.extension.tree</field>
+        <field name='model'>hr.project.based.extension</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='employee_id' optional="show" />
+                <field name='complete_name' optional="show" />
+                <field name='hire_date' optional="show" />
+                <field name='account' optional="show" />
+                <field name='position' optional="show" />
+                <field name='original_eoc' optional="show" />
+                <field name='new_eoc' optional="show" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Er Tracker - PIP Tracker: Tree View-->
+    <record id='hr_pip_tracker_tree' model='ir.ui.view'>
+        <field name='name'>hr.pip.tracker.tree</field>
+        <field name='model'>hr.pip.tracker</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='employee_number' optional="show" />
+                <field name='last_name' optional="hide" />
+                <field name='first_name' optional="hide" />
+                <field name='middle_name' optional="hide" />
+                <field name='complete_name' optional="show" />
+                <field name='hire_date' optional="show" />
+                <field name='account' optional="show" />
+                <field name='hr_representative' optional="hide" />
+                <field name='pip_start_date' optional="show" />
+                <field name='pip_1' optional="hide" />
+                <field name='pip_2' optional="hide" />
+                <field name='second_pip_1' optional="hide" />
+                <field name='graduate' optional="show" />
+                <field name='termination_date' optional="hide" />
+                <field name='remarks' optional="hide" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Iswerk Transition List: Tree View-->
+    <record id='hr_iswerk_transition_list_tree' model='ir.ui.view'>
+        <field name='name'>hr.iswerk.transition.list.tree</field>
+        <field name='model'>hr.iswerk.transition.list</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='employee_id' optional="show" />
+                <field name='complete_name' optional="show" />
+                <field name='position' optional="show" />
+                <field name='start_date' optional="show" />
+                <field name='department_account' optional="show" />
+                <field name='work_email' optional="show" />
+                <field name='effective_date_transfer' optional="show" />
+                <field name='payroll_credential_status' optional="show" />
+                <field name='payroll_enrolled_date' optional="hide" />
+                <field name='payroll_credential_generated_by' optional="hide" />
+                <field name='validated_by' optional="hide" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Performance Review Tracker: Tree View-->
+    <record id='hr_performance_review_tracker_tree' model='ir.ui.view'>
+        <field name='name'>hr.performance.review.tracker.tree</field>
+        <field name='model'>hr.performance.review.tracker</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='employee_number' optional="show" />
+                <field name='complete_name' optional="show" />
+                <field name='hire_date' optional="show" />
+                <field name='c_employment_status' optional="show" />
+                <field name='c_entity' optional="show" />
+                <field name='department' optional="show" />
+                <field name='account' optional="show" />
+                <field name='position' optional="show" />
+                <field name='email_address' optional="show" />
+                <field name='performance_review_poc_name' optional="hide" />
+                <field name='performance_review_poc_email_address' optional="hide" />
+                <field name='comments' optional="hide" />
+                <field name='third_month_review_date' optional="hide" />
+                <field name='third_month_review_accomplished_date' optional="hide" />
+                <field name='fifth_month_review_date' optional="hide" />
+                <field name='fifth_month_review_accomplished_date' optional="hide" />
+                <field name='twentyfour_annual_review_date' optional="hide" />
+                <field name='twentyfour_annual_review_accomplished_date' optional="hide" />
+                <field name='twentyfive_annual_review_date' optional="hide" />
+                <field name='twentyfive_annual_review_accomplished_date' optional="hide" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Resignation Tracker: Tree View -->
+    <record id='hr_resignation_tracker_tree' model='ir.ui.view'>
+        <field name='name'>hr.resignation.tracker.tree</field>
+        <field name='model'>hr.resignation.tracker</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='eid' optional="show" />
+                <field name='full_name' optional="show" />
+                <field name='personal_email' optional="hide" />
+                <!-- <field name='phone_number' optional="hide" /> -->
+                <field name='department_account' optional="show" />
+                <field name='position' optional="show" />
+                <field name='employment_status' optional="show" />
+                <field name='date_hired' optional="hide" />
+                <field name='separation_date' optional="hide" />
+                <field name='separation_status' optional="show" />
+                <field name='category' optional="show" />
+                <field name='eligible_for_rehire' optional="hide" />
+                <field name='voluntary_involuntary' optional="show" />
+                <field name='reason_for_seperation' optional="show" />
+                <field name='resignation_letter_recieved' optional="show" />
+                <!-- <field name='request_for_deactivation' optional="hide" />
+                <field name='wfh_assets' optional="hide" />
+                <field name='with_exit_interview' optional="hide" />
+                <field name='with_company_property_accountability_agreement' optional="hide" />
+                <field name='date_clearance_forwarded_to_c_b' optional="hide" />
+                <field name='received_by_c_b' optional="hide" />
+                <field name='finance_remarks' optional="hide" /> -->
+                <field name='note' optional="show" />
+                <!-- <field name='retention_call' optional="hide" /> -->
+                <field name='exit_interview_reason_for_leaving' optional="hide" />
+                <field name='rl_recieved_date' optional="hide" />
+                <field name='entity' optional="show" />
+                <field name='for_final_pay' optional="show" />
+                <field name='recieved_employment_verification_from' optional="hide" />
+                <!-- <field name='contact_number' optional="hide" />
+                <field name='emergency_contact' optional="hide" /> -->
+                <field name='department' optional="show" />
+                <field name='total_months' optional="show" />
+                <field name='tenure_bracket' optional="show" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>
+
+ <!-- HR Employee Onboarding Tracker: Tree View-->
+    <!-- <record id='hr_employee_onboarding_trackersss_tree' model='ir.ui.view'>
+        <field name='name'>hr.employee.onboarding.trackersss.tree</field>
+        <field name='model'>hr.employee.onboarding.trackersss</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name="employee_id" optional="show"/>
+                <field name="request_id" optional="show"/>
+                <field name="tags" widget="many2many_tags" options="{'color_field': 'color'}" optional="show"/>
+                <field name="complete_name" optional="show"/>
+                <field name="first_name" optional="hide"/>
+                <field name="middle_name" optional="hide"/>
+                <field name="last_name" optional="hide"/>
+                <field name="account" optional="show"/>
+                <field name="recruiter" optional="show"/>
+                <field name="hiring_manager" optional="hide"/>
+                <field name="position" optional="show"/>
+                <field name="projected_start_date" optional="show"/>
+                <field name="orientation_date" optional="show"/>
+            </tree>
+        </field>
+    </record> -->
+
+    <!-- HR EID Tracker: Tree View-->
+    <!-- <record id='hr_eid_tracker_tree' model='ir.ui.view'>
+        <field name='name'>hr.eid.tracker.tree</field>
+        <field name='model'>hr.eid.tracker</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='employee_id' optional="show" />
+                <field name='complete_name' optional="show" />
+                <field name='first_name' optional="hide" />
+                <field name='last_name' optional="hide" />
+                <field name='account' optional="show" />
+                <field name='position' optional="show" />
+                <field name='start_date' optional="show" />
+                <field name='payroll_credential_status' optional="show" />
+            </tree>
+        </field>
+    </record> -->
+
+    <!-- HR Employee Credentials Validation - New Hires: Tree View-->
+    <!-- <record id='hr_employee_credentials_validation_newhires_tree' model='ir.ui.view'>
+        <field name='name'>hr.employee.credentials.validation.newhires.tree</field>
+        <field name='model'>hr.employee.credentials.validation.newhires</field>
+        <field name='arch' type='xml'>
+            <tree class="my_class tree-view-style oe_list_content" default_order="id desc">
+                <field name="employee_id" optional="show"/>
+                <field name="complete_name" optional="show"/>
+                <field name="first_name" optional="hide"/>
+                <field name="last_name" optional="hide"/>
+                <field name="contact_details" optional="show"/>
+                <field name="c_entity" optional="show"/>
+                <field name="enrolled_by" optional="show"/>
+            </tree>
+        </field>
+    </record> -->
+
+    <!-- HR Employee Credentials Validation - Government Numbers: Tree View-->
+    <!-- <record id='hr_employee_credentials_validation_govnumbers_tree' model='ir.ui.view'>
+        <field name='name'>hr.employee.credentials.validation.govnumbers.tree</field>
+        <field name='model'>hr.employee.credentials.validation.govnumbers</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name="employee_id" optional="show"/>
+                <field name="complete_name" optional="show"/>
+                <field name="first_name" optional="hide"/>
+                <field name="last_name" optional="hide"/>
+                <field name="c_entity" optional="show"/>
+                <field name="sss" optional="show"/>
+                <field name="phic" optional="show"/>
+                <field name="hdmf" optional="show"/>
+                <field name="tin" optional="show"/>
+                <field name="send_email" optional="hide"/>
+            </tree>
+        </field>
+    </record> -->
+
+    <!-- HR Employee Credentials Validation - To iSWerk: Tree View-->
+    <!-- <record id='hr_employee_credentials_validation_toiwserk_tree' model='ir.ui.view'>
+        <field name='name'>hr.employee.credentials.validation.toiswerk.tree</field>
+        <field name='model'>hr.employee.credentials.validation.toiswerk</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name="date_enrolled" optional="show"/>
+                <field name="enrolled_by" optional="show"/>
+                <field name="employee_id" optional="show"/>
+                <field name="first_name" optional="hide"/>
+                <field name="last_name" optional="hide"/>
+                <field name="complete_name" optional="show"/>
+                <field name="account_department" optional="show"/>
+                <field name="position" optional="show"/>
+            </tree>
+        </field>
+    </record> -->
+
+    <!-- <record id='hr_employee_masterlist_active_tree' model='ir.ui.view'>
+        <field name='name'>hr.employee.masterlist.active.tree</field>
+        <field name='model'>hr.employee.masterlist.active</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='employee_id' optional="show" />
+                <field name='last_name' optional="hide" />
+                <field name='first_name' optional="hide" />
+                <field name='middle_name' optional="hide" />
+                <field name='complete_name' optional="show" />
+                <field name='start_date' optional="show" />
+                <field name='date_of_birth' optional="show" />
+                <field name='department' optional="hide" />
+                <field name='account' optional="show" />
+                <field name='position' optional="show" />
+                <field name='lob' optional="hide" />
+                <field name='employee_address' optional="show" />
+                <field name='city' optional="hide" />
+                <field name='region' optional="hide" />
+                <field name='employee_email_address' optional="show" />
+                <field name='mobile_number' optional="show" />
+                <field name='second_lob' optional="hide" />
+                <field name='payroll_approver' optional="hide" />
+                <field name='payroll_approvers_email_address' optional="hide" />
+                <field name='managers_name' optional="hide" />
+                <field name='managers_email_address' optional="hide" />
+                <field name='performance_review_poc' optional="hide" />
+                <field name='internet_provider' optional="hide" />
+                <field name='company' optional="show" />
+                <field name='entity_updated' optional="show" />
+                <field name='all_employees_except_pmi' optional="hide" />
+                <field name='isupport_employees_distro' optional="hide" />
+                <field name='iswerk_employees_distro' optional="hide" />
+                <field name='all_ammex' optional="hide" />
+                <field name='lighthouse' optional="hide" />
+                <field name='isupporthub' optional="hide" />
+            </tree>
+        </field>
+    </record> -->
+
+    <!-- HR Employee Masterlist - Inactive: Tree View -->
+    <!-- <record id='hr_employee_masterlist_inactive_tree' model='ir.ui.view'>
+        <field name='name'>hr.employee.masterlist.inactive.tree</field>
+        <field name='model'>hr.employee.masterlist.inactive</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='eid' optional="show" />
+                <field name='complete_name' optional="show" />
+                <field name='department_account' optional="show" />
+                <field name='last_name' optional="hide" />
+                <field name='first_name' optional="hide" />
+                <field name='middle_name' optional="hide" />
+                <field name='start_date' optional="show" />
+                <field name='date_of_birth' optional="show" />
+                <field name='position' optional="hide" />
+                <field name='employee_address' optional="show" />
+                <field name='city' optional="hide" />
+                <field name='region' optional="hide" />
+                <field name='employee_email_address' optional="show" />
+                <field name='mobile_number' optional="show" />
+                <field name='lob' optional="hide" />
+                <field name='payroll_approver' optional="hide" />
+                <field name='payroll_approvers_email_address' optional="hide" />
+                <field name='managers_name' optional="hide" />
+                <field name='managers_email_address' optional="hide" />
+                <field name='internet_provider' optional="hide" />
+                <field name='seperation_date' optional="show" />
+                <field name='seperation_status' optional="show" />
+                <field name='category' optional="show" />
+                <field name='reason_for_seperation' optional="show" />
+                <field name='company' optional="show" />
+            </tree>
+        </field>
+    </record> -->
+
+    <!-- HR Employee Masterlist - Resignation Tracker: Tree View -->
+    <!-- <record id='hr_employee_masterlist_resignation_tracker_tree' model='ir.ui.view'>
+        <field name='name'>hr.employee.masterlist.resignation.tracker.tree</field>
+        <field name='model'>hr.employee.masterlist.resignation.tracker</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='id_no' optional="show" />
+                <field name='fullname' optional="show" />
+                <field name='department' optional="show" />
+                <field name='position' optional="show" />
+                <field name='c_employment_status' optional="hide" />
+                <field name='date_hired' optional="hide" />
+                <field name='seperation_date' optional="hide" />
+                <field name='seperation_status' optional="show" />
+                <field name='category' optional="hide" />
+                <field name='voluntary_involuntary' optional="hide" />
+                <field name='c_reason_for_seperation' optional="show" />
+                <field name='retention_call' optional="show" />
+                <field name='exit_report' optional="show" />
+            </tree>
+        </field>
+    </record> -->
+
+    <!-- HR Offboarding Tracker: Tree View-->
+    <!-- <record id='hr_offboarding_tracker_tree' model='ir.ui.view'>
+        <field name='name'>hr.offboarding.tracker.tree</field>
+        <field name='model'>hr.offboarding.tracker</field>
+        <field name='arch' type='xml'>
+            <tree class="tree-view-style oe_list_content" default_order="id desc">
+                <field name='employee_id' optional="show" />
+                <field name='employee_name' optional="show" />
+                <field name='account' optional="show" />
+                <field name='hire_date' optional="show" />
+                <field name='last_working_date' optional="show" />
+                <field name='seperation_date' optional="show" />
+                <field name='c_company' optional="show" />
+                <field name='overall_clearance_status' optional="show" />
+                <field name='hr_remarks' optional="show" />
+                <field name='disabling_of_it_access' optional="hide" />
+                <field name='odoo_access_disabling' optional="hide" />
+                <field name='assets_pullout_status' optional="hide" />
+                <field name='it_assets_returned' optional="hide" />
+                <field name='pending_it_assets_to_be_returned' optional="hide" />
+                <field name='it_clearance_status' optional="hide" />
+                <field name='it_remarks' optional="show" />
+                <field name='locker_facilities' optional="hide" />
+                <field name='pedestal_key' optional="hide" />
+                <field name='accesories' optional="hide" />
+                <field name='facilities_clearance_status' optional="hide" />
+                <field name='facilities_remarks' optional="show" />
+                <field name='created' optional="show" />
+            </tree>
+        </field>
+    </record> -->

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- ADMIN ACCESS (For HR and DevOps) -->
+        <record model="ir.module.category" id="admin_access">
+            <field name="name">Admin</field>
+            <field name="parent_id" ref="module_hr_isw_accounts" />
+        </record>
+
+        <record id="group_hr_isw_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="admin_access" />
+        </record>
+
+        <record id="group_hr_isw_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="admin_access" />
+            <field name="implied_ids" eval="[(4, ref('group_hr_isw_user'))]" />
+            <field name="implied_ids" eval="[(4, ref('group_it_department_manager'))]" />
+            <field name="implied_ids" eval="[(4, ref('group_gloc_department_manager'))]" />
+            <field name="implied_ids" eval="[(4, ref('group_recruitment_department_manager'))]" />
+            <field name="implied_ids" eval="[(4, ref('group_facilities_department_manager'))]" />
+            <field name="implied_ids" eval="[(4, ref('group_cs_department_manager'))]" />
+            <field name="implied_ids" eval="[(4, ref('group_finance_department_manager'))]" />
+            <field name="implied_ids" eval="[(4, ref('group_employee_user'))]" />
+        </record>
+
+    <!-- IT ACCESS -->
+        <record model="ir.module.category" id="it_access">
+            <field name="name">IT</field>
+            <field name="parent_id" ref="module_hr_isw_accounts" />
+        </record>
+
+        <record id="group_it_department_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="it_access" />
+        </record>
+
+        <record id="group_it_department_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="it_access" />
+            <field name="implied_ids" eval="[(4, ref('group_it_department_user'))]" />
+        </record>
+
+    <!-- GLOC DEPARTMENT -->
+        <record model="ir.module.category" id="gloc_access">
+            <field name="name">GLOC</field>
+            <field name="parent_id" ref="module_hr_isw_accounts" />
+        </record>
+
+        <record id="group_gloc_department_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="gloc_access" />
+        </record>
+
+        <record id="group_gloc_department_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="gloc_access" />
+            <field name="implied_ids" eval="[(4, ref('group_gloc_department_user'))]" />
+        </record>
+
+    <!-- RECRUITMENT DEPARTMENT -->
+        <record model="ir.module.category" id="recruitment_access">
+            <field name="name">Recruitment</field>
+            <field name="parent_id" ref="module_hr_isw_accounts" />
+        </record>
+
+        <record id="group_recruitment_department_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="recruitment_access" />
+        </record>
+
+        <record id="group_recruitment_department_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="recruitment_access" />
+            <field name="implied_ids" eval="[(4, ref('group_recruitment_department_user'))]" />
+        </record>
+
+    <!-- FACILITIES DEPARTMENT -->
+        <record model="ir.module.category" id="facilities_access">
+            <field name="name">Facilities</field>
+            <field name="parent_id" ref="module_hr_isw_accounts" />
+        </record>
+
+        <record id="group_facilities_department_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="facilities_access" />
+        </record>
+
+        <record id="group_facilities_department_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="facilities_access" />
+            <field name="implied_ids" eval="[(4, ref('group_facilities_department_user'))]" />
+        </record>
+
+    <!-- CS DEPARTMENT -->
+        <record model="ir.module.category" id="cs_access">
+            <field name="name">CS</field>
+            <field name="parent_id" ref="module_hr_isw_accounts" />
+        </record>
+
+        <record id="group_cs_department_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="cs_access" />
+        </record>
+
+        <record id="group_cs_department_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="cs_access" />
+            <field name="implied_ids" eval="[(4, ref('group_cs_department_user'))]" />
+        </record>
+
+    <!-- FINANCE DEPARTMENT -->
+        <record model="ir.module.category" id="finance_access">
+            <field name="name">Finance</field>
+            <field name="parent_id" ref="module_hr_isw_accounts" />
+        </record>
+
+        <record id="group_finance_department_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="finance_access" />
+        </record>
+
+        <record id="group_finance_department_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="finance_access" />
+            <field name="implied_ids" eval="[(4, ref('group_finance_department_user'))]" />
+        </record>
+
+    <!-- Employee Acsess -->
+        <record model="ir.module.category" id="employee_access">
+            <field name="name">Employee</field>
+            <field name="parent_id" ref="module_hr_isw_accounts" />
+        </record>
+
+        <record id="group_employee_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="employee_access" />
+        </record>
+
+        <!-- SECURITY FOR PEME, C&B, EXTRA FULL NEO -->
+        <!--
+        access_hr_new_hire_tracker_peme_user,hr.new.hire.tracker.peme.user,model_hr_new_hire_tracker_peme,group_hr_isw_user,1,1,1,0
+        access_hr_new_hire_tracker_peme_manager,hr.new.hire.tracker.peme.manager,model_hr_new_hire_tracker_peme,group_hr_isw_manager,1,1,1,1
+        access_hr_new_hire_tracker_extra_user,hr.new.hire.tracker.extra.user,model_hr_new_hire_tracker_extra,group_hr_isw_user,1,1,1,0
+        access_hr_new_hire_tracker_extra_manager,hr.new.hire.tracker.extra.manager,model_hr_new_hire_tracker_extra,group_hr_isw_manager,1,1,1,1
+        access_hr_new_hire_tracker_cb_user,hr.new.hire.tracker.cb.user,model_hr_new_hire_tracker_cb,group_hr_isw_user,1,1,1,0
+        access_hr_new_hire_tracker_cb_manager,hr.new.hire.tracker.cb.manager,model_hr_new_hire_tracker_cb,group_hr_isw_manager,1,1,1,1
+        access_hr_new_hire_tracker_fullneo_user,hr.new.hire.tracker.fullneo.user,model_hr_new_hire_tracker_fullneo,group_hr_isw_user,1,1,1,0
+        access_hr_new_hire_tracker_fullneo_manager,hr.new.hire.tracker.fullneo.manager,model_hr_new_hire_tracker_fullneo,group_hr_isw_manager,1,1,1,1 -->
+    </data>
+</odoo>
